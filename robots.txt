@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://search-engine.netlify.app/sitemap.xml
