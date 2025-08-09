@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://search-engine.netlify.app/sitemap.xml
+Sitemap: https://search-engineso.netlify.app/sitemap.xml
