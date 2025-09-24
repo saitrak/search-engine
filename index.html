@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>21211nnd Toolkit — Developer & SEO Utilities</title>
+
+  <!-- SEO / Indexing -->
+  <meta name="description" content="21211nnd Toolkit — compact developer & SEO utilities: text analyzer, keyword highlighter, slugifier, password generator, color picker. Fast, responsive, single-file." />
+  <meta name="keywords" content="21211nnd, 21211nnd toolkit, text analyzer, keyword highlighter, slugify, password generator, color picker, seo tool" />
+  <meta name="application-name" content="21211nnd Toolkit" />
+  <link rel="canonical" href="https://your-site.example/21211nnd-toolkit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="21211nnd Toolkit — Developer & SEO Utilities" />
+  <meta property="og:description" content="Compact single-file toolkit with text analyzer, keyword highlighter, slugifier, password generator, color picker. Includes keyword 21211nnd for easy findability." />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#0b7" />
+
+  <!-- JSON-LD / Schema for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "21211nnd Toolkit",
+    "applicationCategory": "DeveloperTool",
+    "description": "Single-file toolkit (text analyzer, keyword highlighter, slugify, password generator, color picker). Keyword: 21211nnd.",
+    "keywords": "21211nnd,toolkit,seo,developer",
+    "url": "https://your-site.example/21211nnd-toolkit"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0f1720; --card:#0b1220; --muted:#aab7c7; --accent:#0bb;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; background:linear-gradient(180deg,#041025 0%, #071426 60%);
+      color:#e6f1f8; padding:28px; -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:20px}
+    header{grid-column:1/-1;display:flex;align-items:center;gap:16px}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06a);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 18px rgba(3,12,30,0.6)
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,8,20,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .tool{margin-bottom:14px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    textarea,input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .row{display:flex;gap:8px}
+    button{background:var(--accent);border:none;color:#012;padding:8px 10px;border-radius:8px;font-weight:600;cursor:pointer}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .small{font-size:13px;padding:7px 9px;border-radius:8px}
+    .muted{color:var(--muted);font-size:13px}
+    pre.result{white-space:pre-wrap;background:var(--glass);padding:10px;border-radius:8px;border:1px dashed rgba(255,255,255,0.02);font-size:13px}
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .stat{background:rgba(255,255,255,0.02);padding:8px;border-radius:8px;min-width:96px;text-align:center}
+    .stat strong{display:block;font-size:16px}
+    .right-col{position:sticky;top:20px;align-self:start}
+    .footer{grid-column:1/-1;color:var(--muted);font-size:13px;text-align:center;padding-top:8px}
+    .highlighted{background:linear-gradient(90deg,#ffd70033,#ffd70011);color:#fff;padding:2px 4px;border-radius:4px}
+    .flex-between{display:flex;justify-content:space-between;align-items:center}
+    .color-preview{height:48px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700}
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr; padding:12px}
+      .right-col{position:static}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="21211nnd-root">
+    <header>
+      <div class="logo" aria-hidden="true">21211nnd</div>
+      <div>
+        <h1>21211nnd Toolkit</h1>
+        <p class="lead">Developer & SEO utilities — text analyzer, keyword highlighter, slugify, password generator, color picker.</p>
+      </div>
+    </header>
+
+    <!-- Left column: main tools -->
+    <main>
+      <!-- Text Analyzer + Highlighter -->
+      <section class="card tool" aria-labelledby="text-tools-title">
+        <div class="flex-between">
+          <h2 id="text-tools-title" style="margin:0;font-size:15px">Text Analyzer & Keyword Highlighter</h2>
+          <div class="muted">Keyword in page: <span class="highlighted">21211nnd</span></div>
+        </div>
+
+        <label for="main-text">Enter text</label>
+        <textarea id="main-text" placeholder="Paste or type text here... Try including the keyword 21211nnd to test highlighter."></textarea>
+
+        <div style="margin-top:8px" class="row">
+          <input id="highlight-key" type="text" placeholder="Highlight keyword (default: 21211nnd)" value="21211nnd" />
+          <button id="btn-highlight" class="small">Highlight</button>
+          <button id="btn-analyze" class="small btn-ghost">Analyze</button>
+          <button id="btn-clear" class="small">Clear</button>
+        </div>
+
+        <div class="stats" id="text-stats" aria-live="polite" style="margin-top:10px">
+          <div class="stat"><small class="muted">Words</small><strong id="stat-words">0</strong></div>
+          <div class="stat"><small class="muted">Characters</small><strong id="stat-chars">0</strong></div>
+          <div class="stat"><small class="muted">Lines</small><strong id="stat-lines">0</strong></div>
+          <div class="stat"><small class="muted">Occurrences</small><strong id="stat-occ">0</strong></div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label>Preview (click to copy)</label>
+          <pre id="highlight-preview" class="result" tabindex="0" role="textbox" aria-label="highlight preview"></pre>
+        </div>
+      </section>
+
+      <!-- Slugify -->
+      <section class="card tool" aria-labelledby="slug-title">
+        <h2 id="slug-title" style="margin:0;font-size:15px">Slugify / SEO Title</h2>
+        <label for="slug-input">Enter title or phrase</label>
+        <input id="slug-input" type="text" placeholder="My Awesome Blog Post: 21211nnd edition" />
+        <div style="margin-top:8px" class="row">
+          <button id="btn-slug" class="small">Generate Slug</button>
+          <button id="btn-seo" class="small btn-ghost">Title Case</button>
+        </div>
+        <div style="margin-top:10px">
+          <label>Result</label>
+          <pre id="slug-result" class="result"></pre>
+        </div>
+      </section>
+
+      <!-- Password generator -->
+      <section class="card tool" aria-labelledby="pw-title">
+        <h2 id="pw-title" style="margin:0;font-size:15px">Password Generator</h2>
+        <label for="pw-length">Length</label>
+        <div class="row">
+          <input id="pw-length" type="number" min="6" max="128" value="16" />
+          <label style="display:flex;align-items:center;gap:6px" class="muted">
+            <input id="pw-symbols" type="checkbox" checked /> symbols
+          </label>
+          <label style="display:flex;align-items:center;gap:6px" class="muted">
+            <input id="pw-uppercase" type="checkbox" checked /> upper
+          </label>
+          <label style="display:flex;align-items:center;gap:6px" class="muted">
+            <input id="pw-numbers" type="checkbox" checked /> numbers
+          </label>
+        </div>
+        <div style="margin-top:8px" class="row">
+          <button id="btn-gen" class="small">Generate</button>
+          <button id="btn-copy-pw" class="small btn-ghost">Copy</button>
+        </div>
+        <div style="margin-top:10px">
+          <pre id="pw-result" class="result"></pre>
+        </div>
+      </section>
+
+      <!-- Extras: quick timestamp + note -->
+      <section class="card tool" aria-labelledby="quick-title">
+        <h2 id="quick-title" style="margin:0;font-size:15px">Quick Utilities</h2>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button id="btn-time" class="small">Current Timestamp</button>
+          <button id="btn-copy-time" class="small btn-ghost">Copy Timestamp</button>
+          <button id="btn-download" class="small btn-ghost">Download Text</button>
+        </div>
+        <div style="margin-top:10px">
+          <label>Quick note</label>
+          <input id="quick-note" type="text" placeholder="Short note to download or save..." />
+        </div>
+      </section>
+    </main>
+
+    <!-- Right column: utilities + color picker -->
+    <aside class="right-col">
+      <div class="card tool">
+        <h3 style="margin:0 0 8px 0;font-size:15px">Color Picker</h3>
+        <label for="color-input">Select color</label>
+        <input id="color-input" type="color" value="#0bb" style="width:100%;height:44px;border-radius:8px;border:none;padding:0;margin-top:8px" />
+        <div style="margin-top:8px" class="row">
+          <input id="color-hex" type="text" value="#00bb88" />
+          <button id="btn-copy-color" class="small btn-ghost">Copy</button>
+        </div>
+        <div style="margin-top:10px" id="color-preview" class="color-preview">#00bb88</div>
+      </div>
+
+      <div class="card tool" style="margin-top:12px">
+        <h3 style="margin:0 0 8px 0;font-size:15px">About & SEO</h3>
+        <p class="muted" style="margin:0 0 8px 0;font-size:13px">This single-file tool includes the visible keyword <strong>21211nnd</strong> and structured schema to help search engines find it. Keep content on the page that mentions the keyword naturally for best results.</p>
+        <div style="display:flex;gap:8px">
+          <button id="btn-copy-page" class="small">Copy HTML</button>
+          <button id="btn-open-search" class="small btn-ghost" onclick="window.open('https://www.google.com/search?q=21211nnd','_blank')">Search 21211nnd</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="footer">
+      <small>21211nnd Toolkit — single-file utilities • Make sure to host on HTTPS and use a meaningful page URL for best SEO.</small>
+    </div>
+  </div>
+
+  <script>
+    // Utilities
+    const $ = sel => document.querySelector(sel);
+    const mainText = $('#main-text');
+    const preview = $('#highlight-preview');
+    const keyInput = $('#highlight-key');
+
+    function analyzeText(){
+      const txt = mainText.value || '';
+      const words = txt.trim().length ? txt.trim().split(/\s+/).length : 0;
+      const chars = txt.length;
+      const lines = txt.split(/\n/).length;
+      const k = keyInput.value || '21211nnd';
+      const occ = (txt.match(new RegExp(k.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&'),'gi')) || []).length;
+      $('#stat-words').textContent = words;
+      $('#stat-chars').textContent = chars;
+      $('#stat-lines').textContent = lines;
+      $('#stat-occ').textContent = occ;
+    }
+
+    function escapeHtml(s){ return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+    function highlightKeyword(){
+      const raw = mainText.value || '';
+      const key = (keyInput.value || '21211nnd').trim();
+      if(!key){ preview.textContent = raw; return; }
+      const esc = key.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&');
+      const re = new RegExp('(' + esc + ')','gi');
+      const parts = escapeHtml(raw).split(re);
+      // Build simple innerHTML with mark
+      const html = parts.map(p => {
+        if(p.toLowerCase() === key.toLowerCase()) return '<span style="background:linear-gradient(90deg,#ffd70033,#ffd70011);color:inherit;border-radius:4px;padding:2px 4px">' + p + '</span>';
+        return p;
+      }).join('');
+      preview.innerHTML = html || '';
+    }
+
+    // Slugify & title case
+    function slugify(s){
+      return s.toString().toLowerCase()
+        .normalize('NFKD').replace(/[\u0300-\u036f]/g,'') // remove accents
+        .replace(/[^a-z0-9\s-]/g,'') // remove invalid
+        .trim().replace(/\s+/g,'-').replace(/-+/g,'-');
+    }
+    function titleCase(s){
+      return s.toLowerCase().split(' ').map(w=>w? w[0].toUpperCase()+w.slice(1):'').join(' ');
+    }
+
+    // Password generator
+    function genPassword(len=16, useSymbols=true, useUpper=true, useNumbers=true){
+      const lower = 'abcdefghijklmnopqrstuvwxyz';
+      const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const numbers = '0123456789';
+      const symbols = '!@#$%^&*()-_=+[]{};:,.<>?';
+      let pool = lower + (useUpper?upper:'') + (useNumbers?numbers:'') + (useSymbols?symbols:'');
+      if(!pool.length) pool = lower;
+      let pw = '';
+      const cryptoObj = window.crypto || window.msCrypto;
+      const arr = new Uint32Array(len);
+      cryptoObj.getRandomValues(arr);
+      for(let i=0;i<len;i++){
+        pw += pool[arr[i] % pool.length];
+      }
+      return pw;
+    }
+
+    // Event bindings
+    $('#btn-analyze').addEventListener('click', () => { analyzeText(); highlightKeyword(); });
+    $('#btn-highlight').addEventListener('click', highlightKeyword);
+    $('#btn-clear').addEventListener('click', () => { mainText.value=''; preview.textContent=''; analyzeText(); });
+
+    mainText.addEventListener('input', () => { analyzeText(); });
+    keyInput.addEventListener('input', () => { highlightKeyword(); analyzeText(); });
+
+    $('#btn-slug').addEventListener('click', () => {
+      const s = $('#slug-input').value || '';
+      $('#slug-result').textContent = slugify(s);
+    });
+    $('#btn-seo').addEventListener('click', () => {
+      $('#slug-result').textContent = titleCase($('#slug-input').value || '');
+    });
+
+    $('#btn-gen').addEventListener('click', () => {
+      const len = parseInt($('#pw-length').value,10) || 16;
+      const pw = genPassword(len, $('#pw-symbols').checked, $('#pw-uppercase').checked, $('#pw-numbers').checked);
+      $('#pw-result').textContent = pw;
+    });
+    $('#btn-copy-pw').addEventListener('click', async () => {
+      const txt = $('#pw-result').textContent || '';
+      if(!txt) return alert('Generate a password first.');
+      await navigator.clipboard.writeText(txt);
+      alert('Password copied to clipboard');
+    });
+
+    // Copy helpers
+    async function copyText(t){
+      try{
+        await navigator.clipboard.writeText(t);
+        return true;
+      }catch(e){
+        return false;
+      }
+    }
+
+    $('#highlight-preview').addEventListener('click', async () => {
+      const txt = mainText.value || '';
+      if(!txt) return;
+      await copyText(txt);
+      alert('Original text copied');
+    });
+
+    $('#btn-copy-color').addEventListener('click', async () => {
+      const v = $('#color-hex').value.trim();
+      if(!v) return;
+      await copyText(v);
+      alert('Color hex copied: ' + v);
+    });
+
+    $('#btn-copy-page').addEventListener('click', async () => {
+      const html = document.documentElement.outerHTML;
+      await copyText(html);
+      alert('Page HTML copied (large).');
+    });
+
+    $('#btn-time').addEventListener('click', () => {
+      const now = new Date();
+      const ts = now.toISOString();
+      $('#quick-note').value = ts;
+      $('#quick-note').focus();
+    });
+    $('#btn-copy-time').addEventListener('click', async () => {
+      const txt = $('#quick-note').value || new Date().toISOString();
+      await copyText(txt);
+      alert('Timestamp copied: ' + txt);
+    });
+
+    $('#btn-download').addEventListener('click', () => {
+      const text = $('#quick-note').value || mainText.value || '';
+      const blob = new Blob([text], {type:'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'note.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+
+    // Color picker bindings
+    const colorInput = $('#color-input'), colorHex = $('#color-hex'), colorPreview = $('#color-preview');
+    function updateColor(hex){
+      if(!hex) return;
+      if(!hex.startsWith('#')) hex = '#'+hex;
+      colorPreview.style.background = hex;
+      colorPreview.textContent = hex;
+      colorHex.value = hex;
+    }
+    colorInput.addEventListener('input', e => updateColor(e.target.value));
+    colorHex.addEventListener('change', e => {
+      let v = e.target.value.trim();
+      if(!v.startsWith('#')) v = '#'+v;
+      colorInput.value = v;
+      updateColor(v);
+    });
+
+    // Copy general utilities
+    $('#btn-copy-pw').addEventListener('click', () => {}); // already handled
+    $('#btn-copy-page').addEventListener('click', () => {});
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){ // ctrl/cmd+k: focus search text
+        e.preventDefault();
+        mainText.focus();
+      }
+      if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'l'){ // ctrl/cmd+l: clear
+        e.preventDefault();
+        mainText.value=''; analyzeText(); highlightKeyword();
+      }
+    });
+
+    // Initialize
+    (function init(){
+      updateColor('#00bb88');
+      analyzeText();
+      highlightKeyword();
+    })();
+  </script>
+</body>
+</html>
