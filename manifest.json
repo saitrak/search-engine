@@ -1,0 +1,15 @@
+{
+  "name": "Alex Rivera Portfolio",
+  "short_name": "AlexPortfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
