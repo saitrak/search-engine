@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fc-pro.netlify.app/sitemap.xml
+Sitemap: https://alexrivera.netlify.app/sitemap.xml
